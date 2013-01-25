@@ -39,9 +39,6 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-" pydiction
-let g:pydiction_location='~/.vim/tools/pydiction/complete-dict'
-
 " fold
 " zc      折叠
 " zC     对所在范围内所有嵌套的折叠点进行折叠
