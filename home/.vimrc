@@ -10,18 +10,20 @@ nmap <silent> <F9> :TagbarToggle<CR>
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
 " powerline
-" set laststatus=2
-" set encoding=utf-8
-" let g:Powerline_symbols = 'fancy'
-"
-" " openstack
+set laststatus=2
+set encoding=utf-8
+let g:Powerline_symbols = 'fancy'
+
+" openstack
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+
 " python indent
 filetype plugin indent on
-autocmd FileType python setlocal et sta sw=4 sts=4
+" use vim-python-pep8-indent instead of below
+" autocmd FileType python setlocal et sta sw=4 sts=4
 
 " highlight spaces
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -31,8 +33,11 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" " python complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+" python complete
+" use jedi-vim
+" instead of omnifunc
+
+" other type code complete
 autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
