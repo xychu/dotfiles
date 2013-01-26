@@ -14,3 +14,4 @@ sudo pip-python install jedi
 git clone git://github.com/davidhalter/jedi-vim.git
 
 git clone git://github.com/Lokaltog/vim-powerline.git
+git clone https://github.com/plasticboy/vim-markdown.git
