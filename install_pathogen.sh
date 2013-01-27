@@ -7,6 +7,7 @@ https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 cd ~/.vim/bundle
 git clone git://github.com/scrooloose/nerdtree.git
+sudo yum install -y ctags
 git clone git://github.com/majutsushi/tagbar.git
 git clone git://github.com/hynek/vim-python-pep8-indent.git
 
