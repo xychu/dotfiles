@@ -61,3 +61,11 @@ set foldlevel=99
 " pep8
 let g:pep8_map='<leader>8'
 let g:pep8_ignore="N4,E12,E711,E721,E712"
+
+" vim-markdown
+let g:vim_markdown_folding_disabled=1
+
+" vim-javascript
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
