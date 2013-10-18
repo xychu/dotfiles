@@ -6,6 +6,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific aliases and functions
+alias home='cd ~/'
+alias pshs='python -m SimpleHTTPServer'
 
 function _update_ps1() {
    export PS1="$(~/powerline-shell.py $?)"
