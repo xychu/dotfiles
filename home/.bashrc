@@ -8,6 +8,7 @@ fi
 # User specific aliases and functions
 alias home='cd ~/'
 alias pshs='python -m SimpleHTTPServer'
+alias sudocker='sudo docker'
 
 function _update_ps1() {
    export PS1="$(~/powerline-shell.py $?)"
