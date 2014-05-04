@@ -46,6 +46,9 @@ nmap <silent> <F9> :TagbarToggle<CR>
 " nerdtree
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
+" pastetoggle
+set pastetoggle=<F3>
+
 " powerline
 set laststatus=2
 set encoding=utf-8
@@ -76,8 +79,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 set foldmethod=indent
 set foldlevel=99
 
-" spell check
-:map <silent> <F5> :setlocal spell! spelllang=en_us<CR>
+" spell check only on text formatted files
+autocmd BufNewFile,BufRead *.{md,rst,txt} setlocal spell spelllang=en_us
 " pep8
 let g:pep8_map='<leader>8'
 let g:pep8_ignore="N4,E12,E711,E721,E712"
@@ -107,8 +110,35 @@ autocmd BufWinLeave * call clearmatches()
 
 
 " golang support
-"filetype off
-"filetype plugin indent off
-"set runtimepath+=/usr/lib64/golang/misc/vim
-"filetype plugin indent on
-"syntax on
+
+" go fmt when save
+autocmd BufWritePre *.go :Fmt
+
+" gotags
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
