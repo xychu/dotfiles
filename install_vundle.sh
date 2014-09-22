@@ -18,12 +18,12 @@ ln -s ${PWD}/home/.vimrc ~/.vimrc
 vim +BundleInstall +qall
 
 # compile ycm_support_libs
+# need clang installed
+sudo yum install clang -y
 (cd ~
 mkdir ycm_build
 cd ycm_build
-wget -c http://llvm.org/releases/3.4/clang+llvm-3.4-x86_64-fedora20.tar.xz
-tar -xvf clang+llvm-3.4-x86_64-fedora20.tar.xz
-cmake -G "Unix Makefiles" -DPATH_TO_LLVM_ROOT=~/ycm_build/clang+llvm-3.4-x86_64-fedora20 . ~/.vim/bundle/YouCompleteMe/cpp
+cmake -G "Unix Makefiles" -DUSE_SYSTEM_LIBCLANG=ON . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
 make ycm_support_libs
 )
 

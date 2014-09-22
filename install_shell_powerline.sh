@@ -2,6 +2,7 @@
 
 (cd ~
 git clone https://github.com/milkbikis/powerline-shell
-python ~/powerline-shell/install.py
+cd powerline-shell
+./install.py
 ln -s ~/powerline-shell/powerline-shell.py ~/powerline-shell.py
 )
