@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # use Vundle instead of pathogen
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # needed by tagbar
 sudo yum install -y ctags

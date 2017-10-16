@@ -1,11 +1,14 @@
 [user]
-	email = xchu@redhat.com
+	email = xychu2008@gmail.com
 	name = Xiangyang Chu
 [alias]
 	st = status
 	ci = commit
+	ca = commit --amend
 	co = checkout
 	br = branch
+	df = diff
+	dc = diff --cached
 [color]
 	branch = auto
 	diff = auto
