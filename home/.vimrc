@@ -11,8 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'fatih/vim-go'
-Plugin 'zeis/vim-kolor'
-Plugin 'ctrlpvim/ctrlp'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
@@ -53,21 +52,6 @@ filetype plugin indent on    " required
 
 syntax on
 filetype plugin indent on
-
-" kolor
-" Enable italic. Default: 1
-let g:kolor_italic=1
-" Enable bold. Default: 1
-let g:kolor_bold=1
-" Enable underline. Default: 0
-let g:kolor_underlined=0
-" Gray 'MatchParen' color. Default: 0
-let g:kolor_alternative_matchparen=0
-" White foreground 'MatchParen' color that might work better with some
-" terminals. Default: 0
-let g:kolor_inverted_matchparen=0
-colorscheme kolor
-set t_Co=256
 
 " nerdtree
 " nmap <silent> <F7> :NERDTreeToggle<CR>
@@ -139,3 +123,5 @@ let g:tagbar_type_go = {
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+"
+set encoding=utf-8

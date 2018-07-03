@@ -81,26 +81,11 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function powerline_precmd() {
-  export PS1="$(~/powerline-shell.py $? --shell zsh 2> /dev/null)"
-}
-
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-
-install_powerline_precmd
-
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:$HOME/Workspace/mygo/bin
+PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/bin:$HOME/Workspace/go/bin
 
-GOPATH=$HOME/Workspace/mygo
+GOPATH=$HOME/Workspace/go
 
 export PATH
 export GOPATH
@@ -109,3 +94,11 @@ export GOPATH
 export WORKON_HOME=$HOME/.virtualenvs
 #source /usr/bin/virtualenvwrapper.sh
 
+
+export PATH=~/phabricator/arcanist/bin/:${PATH}
+export EDITOR=vim
+alias arc='LC_ALL=C arc'
+
+export PATH="/home/ethanchu/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
