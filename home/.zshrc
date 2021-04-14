@@ -83,11 +83,12 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # User specific environment and startup programs
 
-PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/bin:$HOME/Workspace/go/bin
-
-GOPATH=$HOME/Workspace/go
-
+PATH=$PATH:$HOME/.local/bin:/usr/local/go/bin:$HOME/bin
 export PATH
+
+PATH=$PATH::$HOME/Workspace/go/bin
+export PATH
+GOPATH=$HOME/Workspace/go
 export GOPATH
 
 # virtualenvwrapper
@@ -95,10 +96,25 @@ export WORKON_HOME=$HOME/.virtualenvs
 #source /usr/bin/virtualenvwrapper.sh
 
 
+# added by Anaconda3 installer
+#export PATH="/home/ethanchu/anaconda3/bin:$PATH"
+
 export PATH=~/phabricator/arcanist/bin/:${PATH}
 export EDITOR=vim
 alias arc='LC_ALL=C arc'
 
-export PATH="/home/ethanchu/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+#eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# kubebuilder bin
+export PATH="$PATH:/usr/local/kubebuilder/bin"
+
+export PATH="$PATH:/usr/lib64/openmpi/bin/"
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
