@@ -10,12 +10,12 @@
 	br = !git --no-pager branch
 	df = diff
 	dc = diff --cached
-    slg = !git --no-pager log --pretty=oneline --no-merges
+        slg = !git --no-pager log --pretty=oneline --no-merges
 [color]
 	branch = auto
 	diff = auto
 	interactive = auto
 	status = auto
 	ui = auto
-[http]
-	cookiefile = /home/ethanchu/.gitcookies
+[core]
+	editor = vim
